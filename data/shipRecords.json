@@ -1,0 +1,26 @@
+{
+  "TP Offshore": [],
+  "MEDLOG": [
+    {
+      "id": "med-1",
+      "ship": "MSC Ruby",
+      "location": "Rotterdam",
+      "date": "2025-10-03",
+      "device": "Insulation & Continuity Test",
+      "serial": "SN-55231",
+      "certificate": "cert-ruby-2025.pdf",
+      "nextTest": "2026-10-03"
+    },
+    {
+      "id": "med-1",
+      "ship": "MSC Ruby",
+      "location": "Rotterdam",
+      "date": "2025-10-03",
+      "device": "Insulation & Continuity Test",
+      "serial": "SN-55231",
+      "certificate": "cert-ruby-2025.pdf",
+      "nextTest": "2026-10-03"
+    }
+  ],
+  "Reederei NORD": []
+}

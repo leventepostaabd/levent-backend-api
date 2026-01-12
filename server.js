@@ -97,6 +97,9 @@ app.post("/api/deleteRecord", async (req, res) => {
    PDF UPLOAD (DÜZELTİLMİŞ)
 ----------------------------------------- */
 app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
+  console.log("UPLOAD ENDPOINT ÇALIŞTI");
+  console.log("FILE:", req.file);
+
   if (!req.file) {
     return res.status(400).json({ error: "Dosya bulunamadı" });
   }
@@ -125,6 +128,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Backend çalışıyor: " + PORT);
 });
+
 
 
 

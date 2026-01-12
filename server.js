@@ -9,6 +9,7 @@ const path = require("path");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/upload", express.static(path.join(__dirname, "upload")));
 
 const DATA_PATH = path.join(__dirname, "data", "shipRecords.json");
 const upload = multer({ dest: path.join(__dirname, "upload") });
@@ -130,6 +131,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Backend çalışıyor: " + PORT);
 });
+
 
 
 

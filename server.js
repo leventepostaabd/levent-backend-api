@@ -9,7 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 const DATA_PATH = path.join(__dirname, "data", "shipRecords.json");
-const upload = multer({ dest: path.join(__dirname, "uploads") });
+const upload = multer({ dest: path.join(__dirname, "upload") });
+
 
 /* -----------------------------------------
    LOGIN ENDPOINT (EKLENDİ – diğer kodlara dokunulmadı)
@@ -99,7 +100,8 @@ app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "PDF yüklenmedi" });
 
   const newName = req.file.originalname;
-  const newPath = path.join(__dirname, "uploads", newName);
+  const newPath = path.join(__dirname, "upload", newName);
+
 
   fs.rename(req.file.path, newPath);
   res.json({ success: true, filename: newName });
@@ -113,3 +115,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Backend çalışıyor: " + PORT);
 });
+

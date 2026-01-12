@@ -94,7 +94,7 @@ app.post("/api/deleteRecord", async (req, res) => {
 });
 
 /* -----------------------------------------
-   PDF UPLOAD
+   PDF UPLOAD (DÜZELTİLMİŞ)
 ----------------------------------------- */
 app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "PDF yüklenmedi" });
@@ -102,10 +102,16 @@ app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
   const newName = req.file.originalname;
   const newPath = path.join(__dirname, "upload", newName);
 
+  fs.rename(req.file.path, newPath, (err) => {
+    if (err) {
+      console.error("PDF taşınamadı:", err);
+      return res.status(500).json({ error: "PDF taşınamadı" });
+    }
 
-  fs.rename(req.file.path, newPath);
-  res.json({ success: true, filename: newName });
+    res.json({ success: true, filename: newName });
+  });
 });
+
 
 /* -----------------------------------------
    PORT AYARI (RENDER UYUMLU)
@@ -115,4 +121,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Backend çalışıyor: " + PORT);
 });
+
 

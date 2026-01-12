@@ -97,7 +97,9 @@ app.post("/api/deleteRecord", async (req, res) => {
    PDF UPLOAD (DÜZELTİLMİŞ)
 ----------------------------------------- */
 app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: "PDF yüklenmedi" });
+  if (!req.file) {
+    return res.status(400).json({ error: "Dosya bulunamadı" });
+  }
 
   const newName = req.file.originalname;
   const newPath = path.join(__dirname, "upload", newName);
@@ -114,6 +116,7 @@ app.post("/api/uploadCert", upload.single("pdf"), (req, res) => {
 
 
 
+
 /* -----------------------------------------
    PORT AYARI (RENDER UYUMLU)
 ----------------------------------------- */
@@ -122,6 +125,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Backend çalışıyor: " + PORT);
 });
+
 
 
 

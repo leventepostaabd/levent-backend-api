@@ -22,5 +22,34 @@
       "nextTest": "2026-10-03"
     }
   ],
-  "Reederei NORD": []
+  "Reederei NORD": [
+    {
+      "ship": "wddwdw",
+      "location": "wdwdwd",
+      "date": "2025-05-02",
+      "device": "Fire Detection Loop Test",
+      "serial": "532543f",
+      "pdfFilename": "sample-certificate.pdf",
+      "nextTest": "2026-02-05",
+      "id": "REC-1768385148440",
+      "qrFilename": "qr-REC-1768385148440.png",
+      "qrUrl": "/upload/qr-REC-1768385148440.png",
+      "shortUrl": "http://localhost:3000/t/REC-1768385148440"
+    }
+  ],
+  "Polaris": [
+    {
+      "ship": "gemi",
+      "location": "pasifik",
+      "date": "2025-12-01",
+      "device": "ACB Test",
+      "serial": "789654123",
+      "pdfFilename": "sample-certificate - Copy.pdf",
+      "nextTest": "2026-09-01",
+      "id": "REC-1768454330630",
+      "qrFilename": "qr-REC-1768454330630.png",
+      "qrUrl": "/upload/qr-REC-1768454330630.png",
+      "shortUrl": "http://localhost:3000/t/REC-1768454330630"
+    }
+  ]
 }
